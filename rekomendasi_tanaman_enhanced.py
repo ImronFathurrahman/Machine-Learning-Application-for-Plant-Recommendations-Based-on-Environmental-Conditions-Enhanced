@@ -600,10 +600,10 @@ def show_visualizations():
                           'Distribusi pH Tanah', 'Distribusi Ketersediaan Air')
         )
         
-        fig2.add_trace(go.Histogram(x=df['suhu'], name='Suhu', marker_color='#2a9d8f'), row=1, col=1)
-        fig2.add_trace(go.Histogram(x=df['kelembaban'], name='Kelembaban', marker_color='#e9c46a'), row=1, col=2)
-        fig2.add_trace(go.Histogram(x=df['ph_tanah'], name='pH Tanah', marker_color='#e76f51'), row=2, col=1)
-        fig2.add_trace(go.Histogram(x=df['ketersediaan_air'], name='Air', marker_color='#264653'), row=2, col=2)
+        fig2.add_trace(go.Histogram(x=df['suhu'], name='Suhu', marker_color="#54d184"), row=1, col=1)
+        fig2.add_trace(go.Histogram(x=df['kelembaban'], name='Kelembaban', marker_color="#6ae9a3"), row=1, col=2)
+        fig2.add_trace(go.Histogram(x=df['ph_tanah'], name='pH Tanah', marker_color="#e7c451"), row=2, col=1)
+        fig2.add_trace(go.Histogram(x=df['ketersediaan_air'], name='Air', marker_color="#6FBEDD"), row=2, col=2)
         
         fig2.update_layout(showlegend=False, height=600)
         st.plotly_chart(fig2, use_container_width=True)
@@ -683,7 +683,7 @@ def show_visualizations():
             corr_matrix,
             text_auto=True,
             aspect="auto",
-            color_continuous_scale='RdBu',
+            color_continuous_scale='GnBu',
             title="Matriks Korelasi Parameter Numerik"
         )
         
@@ -854,9 +854,9 @@ def show_prediction():
             ))
         
         fig.update_layout(
-            grid={'rows': 4, 'columns': 1, 'pattern': "independent"},
-            height=400,
-            margin=dict(l=20, r=20, t=30, b=20)
+            grid={'rows': 4, 'columns': 1, 'pattern': "independent", 'ygap': 0.5},
+            height=500,
+            margin=dict(l=20, r=20, t=50, b=50)
         )
         
         st.plotly_chart(fig, use_container_width=True)
